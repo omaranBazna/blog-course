@@ -1,15 +1,16 @@
 import { signInWithPopup } from "firebase/auth";
 import React from "react"
 import {auth,provider} from "../firebase-config"
-import {signInWithPopup} from "firebase/auth"
+import {singInWithGoogel} from "firebase/auth"
 
 
 function Login(setIsAuth){
 
     const singInWithGoogel=()=>{
-        signInWithPopup(auth,provider).then((result)=>{
-   setIsAuth(true);
-
+ 
+         signInWithPopup(auth,provider).then((result)=>{
+           setIsAuth(true);
+           localStorage.setItem("isAuth",true);
         }
         )
     }
